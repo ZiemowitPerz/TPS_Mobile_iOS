@@ -6,6 +6,8 @@ import WebKit
 /// paska Safari — jest to "goły" widok strony, więc nic tu nie trzeba ukrywać.
 struct WebView: UIViewRepresentable {
     let url: URL
+    @Binding var didFail: Bool
+    let reloadTrigger: Int // zmiana tej wartości = użytkownik nacisnął "Odśwież"
 
     func makeUIView(context: Context) -> WKWebView {
         let config = WKWebViewConfiguration()
@@ -88,21 +90,48 @@ struct WebView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        // Nic do aktualizacji — URL ładujemy tylko raz przy starcie
+        // Przeładowujemy WYŁĄCZNIE gdy reloadTrigger się zmienił, czyli
+        // gdy użytkownik sam nacisnął "Odśwież". Nigdy nie robimy tego
+        // automatycznie — to zabezpieczenie przed pętlą (dead loop) przy
+        // braku internetu: bez internetu przeładowanie i tak by się nie
+        // udało, więc nie ma sensu próbować w kółko bez udziału użytkownika.
+        if context.coordinator.lastReloadTrigger != reloadTrigger {
+            context.coordinator.lastReloadTrigger = reloadTrigger
+            didFail = false
+            uiView.load(URLRequest(url: url))
+        }
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator()
+        Coordinator(didFail: $didFail)
     }
 
     class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
-        // Miejsce na ewentualną obsługę błędów ładowania, np.:
-        // func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) { ... }
+        var didFail: Binding<Bool>
+        var lastReloadTrigger: Int = 0
 
-        // Blokuje natywne okienka window.confirm/alert/prompt strony, jeśli
-        // wolisz, żeby appka nigdy nie pokazywała "webowych" popupów —
-        // domyślnie zostawione zakomentowane, bo część stron ich potrzebuje
-        // do logowania/potwierdzeń. Odkomentuj w razie potrzeby:
+        init(didFail: Binding<Bool>) {
+            self.didFail = didFail
+        }
+
+        // Błąd zanim strona w ogóle zaczęła się ładować (typowy przypadek dla "brak internetu")
+        func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+            guard (error as NSError).code != NSURLErrorCancelled else { return } // normalne przy przekierowaniach, nie jest to prawdziwy błąd
+            didFail.wrappedValue = true
+        }
+
+        // Błąd już w trakcie ładowania strony
+        func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+            guard (error as NSError).code != NSURLErrorCancelled else { return }
+            didFail.wrappedValue = true
+        }
+
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            didFail.wrappedValue = false
+        }
+
+        // Miejsce na ewentualną obsługę popupów window.confirm/alert/prompt strony
+        // Domyślnie zostawione zakomentowane, bo część stron ich potrzebuje do logowania/potwierdzeń.
         //
         // func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         //     completionHandler()

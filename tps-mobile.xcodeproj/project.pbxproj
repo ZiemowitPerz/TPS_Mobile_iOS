@@ -10,9 +10,22 @@
 		A5E76E54302A033E00C0576C /* EMS Swiat Myjni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EMS Swiat Myjni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A5E76E76302A25DD00C0576C /* Exceptions for "tps-mobile" folder in "tps-mobile" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A5E76E53302A033E00C0576C /* tps-mobile */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A5E76E56302A033E00C0576C /* tps-mobile */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A5E76E76302A25DD00C0576C /* Exceptions for "tps-mobile" folder in "tps-mobile" target */,
+			);
 			path = "tps-mobile";
 			sourceTree = "<group>";
 		};

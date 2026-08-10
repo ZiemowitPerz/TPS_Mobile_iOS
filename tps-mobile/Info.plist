@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>APP_WEB_URL</key>
-	<string>${APP_WEB_URL)</string>
+	<string>$(APP_WEB_URL)</string>
 </dict>
 </plist>

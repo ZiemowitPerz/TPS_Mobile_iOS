@@ -1,3 +1,5 @@
+import SwiftUI
+
 struct ContentView: View {
     @State private var didFail = false
     @State private var reloadTrigger = 0

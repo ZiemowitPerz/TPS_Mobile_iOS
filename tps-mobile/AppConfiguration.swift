@@ -1,3 +1,5 @@
+import SwiftUI
+
 enum AppConfiguration {
 
     static var webURL: URL {

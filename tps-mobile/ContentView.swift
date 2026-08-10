@@ -1,21 +1,12 @@
-//
-//  ContentView.swift
-//  tps-mobile
-//
-//  Created by Integra on 10/08/2026.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    // Podmień na adres, który ma się wczytywać
+    let url = URL(string: "https://tpsprebeta.integra.com.pl/ClientScheduler?pointOfServiceCode=TEST-AC")!
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        WebView(url: url)
+            .ignoresSafeArea() // pełny ekran, bez żadnych pasków systemowych
     }
 }
 

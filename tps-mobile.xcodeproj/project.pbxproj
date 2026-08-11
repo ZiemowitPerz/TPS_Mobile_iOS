@@ -9,14 +9,12 @@
 /* Begin PBXFileReference section */
 		A5E76E54302A033E00C0576C /* EMS Świat Myjni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EMS Świat Myjni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E76EB4302B6C1500C0576C /* TPS Test AC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TPS Test AC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5E76EDF302B74F500C0576C /* Golden Duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Golden Duck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		A5E76EB6302B6C1600C0576C /* Exceptions for "tps-mobile" folder in "TPS Test AC" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"/Users/integra/development/aplikacje_mobilne/tps-mobile/tps-mobile/Info-GoldenDuck.plist",
 				"Info-EMS.plist",
 			);
 			target = A5E76EAD302B6C1500C0576C /* TPS Test AC */;
@@ -24,18 +22,9 @@
 		A5E76ED0302B71B400C0576C /* Exceptions for "tps-mobile" folder in "EMS Swiat Myjni" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"/Users/integra/development/aplikacje_mobilne/tps-mobile/tps-mobile/Info-GoldenDuck.plist",
 				"Info-TestAC.plist",
 			);
 			target = A5E76E53302A033E00C0576C /* EMS Swiat Myjni */;
-		};
-		A5E76EE1302B74F600C0576C /* Exceptions for "tps-mobile" folder in "Golden Duck" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Info-EMS.plist",
-				"Info-TestAC.plist",
-			);
-			target = A5E76ED8302B74F500C0576C /* Golden Duck */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -45,7 +34,6 @@
 			exceptions = (
 				A5E76ED0302B71B400C0576C /* Exceptions for "tps-mobile" folder in "EMS Swiat Myjni" target */,
 				A5E76EB6302B6C1600C0576C /* Exceptions for "tps-mobile" folder in "TPS Test AC" target */,
-				A5E76EE1302B74F600C0576C /* Exceptions for "tps-mobile" folder in "Golden Duck" target */,
 			);
 			path = "tps-mobile";
 			sourceTree = "<group>";
@@ -61,13 +49,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A5E76EAF302B6C1500C0576C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5E76EDA302B74F500C0576C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,7 +71,6 @@
 			children = (
 				A5E76E54302A033E00C0576C /* EMS Świat Myjni.app */,
 				A5E76EB4302B6C1500C0576C /* TPS Test AC.app */,
-				A5E76EDF302B74F500C0576C /* Golden Duck.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,28 +122,6 @@
 			productReference = A5E76EB4302B6C1500C0576C /* TPS Test AC.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A5E76ED8302B74F500C0576C /* Golden Duck */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A5E76EDC302B74F500C0576C /* Build configuration list for PBXNativeTarget "Golden Duck" */;
-			buildPhases = (
-				A5E76ED9302B74F500C0576C /* Sources */,
-				A5E76EDA302B74F500C0576C /* Frameworks */,
-				A5E76EDB302B74F500C0576C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				A5E76E56302A033E00C0576C /* tps-mobile */,
-			);
-			name = "Golden Duck";
-			packageProductDependencies = (
-			);
-			productName = "tps-mobile";
-			productReference = A5E76EDF302B74F500C0576C /* Golden Duck.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,7 +153,6 @@
 			targets = (
 				A5E76E53302A033E00C0576C /* EMS Swiat Myjni */,
 				A5E76EAD302B6C1500C0576C /* TPS Test AC */,
-				A5E76ED8302B74F500C0576C /* Golden Duck */,
 			);
 		};
 /* End PBXProject section */
@@ -215,13 +172,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5E76EDB302B74F500C0576C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -233,13 +183,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A5E76EAE302B6C1500C0576C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5E76ED9302B74F500C0576C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -534,88 +477,6 @@
 			};
 			name = Release;
 		};
-		A5E76EDD302B74F500C0576C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APP_ADDITIONAL_ALLOWED_HOSTS = ibs.integra.com.pl;
-				APP_BUNDLE_ID = com.companyname.goldenduck;
-				APP_ICON_SET_NAME = "AppIcon-GoldenDuck";
-				APP_NAME = "Golden Duck";
-				APP_WEB_URL = "https://myjniesamochodowe.com.pl/golden-duck/";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 832AW96PY5;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "tps-mobile/Info-GoldenDuck.plist";
-				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A5E76EDE302B74F500C0576C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APP_ADDITIONAL_ALLOWED_HOSTS = ibs.integra.com.pl;
-				APP_BUNDLE_ID = com.companyname.goldenduck;
-				APP_ICON_SET_NAME = "AppIcon-GoldenDuck";
-				APP_NAME = "Golden Duck";
-				APP_WEB_URL = "https://myjniesamochodowe.com.pl/golden-duck/";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 832AW96PY5;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "tps-mobile/Info-GoldenDuck.plist";
-				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -642,15 +503,6 @@
 			buildConfigurations = (
 				A5E76EB2302B6C1500C0576C /* Debug */,
 				A5E76EB3302B6C1500C0576C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A5E76EDC302B74F500C0576C /* Build configuration list for PBXNativeTarget "Golden Duck" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A5E76EDD302B74F500C0576C /* Debug */,
-				A5E76EDE302B74F500C0576C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

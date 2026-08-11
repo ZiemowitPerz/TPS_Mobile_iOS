@@ -34,17 +34,7 @@ enum AppConfiguration {
             #endif
         }
 
-        // Preferowany format: prawdziwa tablica w Info.plist (typ Array, elementy String).
-        // Jest odporna na przecinki/spacje — nie ma nic do parsowania, więc nie może
-        // "zjeść" wpisów przez podmianę zmiennej Build Settings czy literówkę w separatorze.
-        if let array = Bundle.main.object(forInfoDictionaryKey: "APP_ADDITIONAL_ALLOWED_HOSTS") as? [String] {
-            let cleaned = array
-                .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-                .filter { !$0.isEmpty }
-            hosts.append(contentsOf: cleaned)
-        }
-        // Fallback: string rozdzielany przecinkami (starszy format / wygodny do szybkich testów)
-        else if let raw = Bundle.main.object(forInfoDictionaryKey: "APP_ADDITIONAL_ALLOWED_HOSTS") as? String {
+        if let raw = Bundle.main.object(forInfoDictionaryKey: "APP_ADDITIONAL_ALLOWED_HOSTS") as? String {
             let additional = raw
                 .split(separator: ",")
                 .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }

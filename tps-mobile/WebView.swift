@@ -6,6 +6,7 @@ import WebKit
 /// paska Safari — jest to "goły" widok strony, więc nic tu nie trzeba ukrywać.
 struct WebView: UIViewRepresentable {
     let url: URL
+    let allowedHosts: [String]
     @Binding var didFail: Bool
     let reloadTrigger: Int // zmiana tej wartości = użytkownik nacisnął "Odśwież"
 
@@ -103,18 +104,79 @@ struct WebView: UIViewRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(didFail: $didFail)
+        Coordinator(didFail: $didFail, allowedHosts: allowedHosts)
     }
 
     class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
         var didFail: Binding<Bool>
         var lastReloadTrigger: Int = 0
+        let allowedHosts: [String]
 
-        init(didFail: Binding<Bool>) {
+        init(didFail: Binding<Bool>, allowedHosts: [String]) {
             self.didFail = didFail
+            self.allowedHosts = allowedHosts
         }
 
-        // Błąd zanim strona w ogóle zaczęła się ładować (typowy przypadek dla "brak internetu")
+        /// Sprawdza, czy dany host jest na whiteliście — dopasowuje też
+        /// subdomeny (np. "app.domena2.pl" przejdzie dla wpisu "domena2.pl"),
+        /// ale nie dopasowuje przypadkowo "notdomena2.pl".
+        private func isHostAllowed(_ host: String?) -> Bool {
+            guard let host = host?.lowercased() else { return false }
+            return allowedHosts.contains { allowed in
+                let allowed = allowed.lowercased()
+                return host == allowed || host.hasSuffix("." + allowed)
+            }
+        }
+
+        // Kluczowe miejsce blokady: KAŻDA nawigacja (kliknięcie linku,
+        // przekierowanie serwera, formularz, JS location change) przechodzi
+        // przez tę metodę. Jeśli host nie jest na whiteliście — .cancel.
+        // Dzięki temu przekierowanie domena1/ems → domena2/ems zadziała
+        // (bo domena2 jest dopisana do allowedHosts), a próba wyjścia na
+        // jakąkolwiek inną domenę zostanie zablokowana.
+        func webView(
+            _ webView: WKWebView,
+            decidePolicyFor navigationAction: WKNavigationAction,
+            decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+        ) {
+            guard let requestURL = navigationAction.request.url else {
+                decisionHandler(.cancel)
+                return
+            }
+
+            // Dopuszczamy tylko http/https — blokuje np. tel:, mailto:,
+            // custom schematy próbujące otworzyć inne aplikacje
+            guard requestURL.scheme == "https" || requestURL.scheme == "http" else {
+                decisionHandler(.cancel)
+                return
+            }
+
+            if isHostAllowed(requestURL.host) {
+                decisionHandler(.allow)
+            } else {
+                decisionHandler(.cancel)
+            }
+        }
+
+        // Blokuje otwieranie linków w nowym oknie/karcie (target="_blank",
+        // window.open z JS). Zamiast otwierać nowe okno (którego appka i tak
+        // nie ma jak pokazać sensownie), ładujemy adres w TYM SAMYM WebView —
+        // ale tylko jeśli host jest dozwolony; w przeciwnym razie link jest
+        // po prostu ignorowany.
+        func webView(
+            _ webView: WKWebView,
+            createWebViewWith configuration: WKWebViewConfiguration,
+            for navigationAction: WKNavigationAction,
+            windowFeatures: WKWindowFeatures
+        ) -> WKWebView? {
+            if let requestURL = navigationAction.request.url, isHostAllowed(requestURL.host) {
+                webView.load(navigationAction.request)
+            }
+            return nil // nigdy nie tworzymy nowego okna
+        }
+
+        // Błąd zanim strona w ogóle zaczęła się ładować (typowy przypadek
+        // dla "brak internetu")
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
             guard (error as NSError).code != NSURLErrorCancelled else { return } // normalne przy przekierowaniach, nie jest to prawdziwy błąd
             didFail.wrappedValue = true
@@ -130,8 +192,10 @@ struct WebView: UIViewRepresentable {
             didFail.wrappedValue = false
         }
 
-        // Miejsce na ewentualną obsługę popupów window.confirm/alert/prompt strony
-        // Domyślnie zostawione zakomentowane, bo część stron ich potrzebuje do logowania/potwierdzeń.
+        // Miejsce na ewentualną obsługę popupów window.confirm/alert/prompt strony, jeśli
+        // wolisz, żeby appka nigdy nie pokazywała "webowych" popupów —
+        // domyślnie zostawione zakomentowane, bo część stron ich potrzebuje
+        // do logowania/potwierdzeń. Odkomentuj w razie potrzeby:
         //
         // func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         //     completionHandler()

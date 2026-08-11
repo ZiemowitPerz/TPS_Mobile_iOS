@@ -8,6 +8,7 @@ struct ContentView: View {
         ZStack {
             WebView(
                 url: AppConfiguration.webURL,
+                allowedHosts: AppConfiguration.allowedHosts,
                 didFail: $didFail,
                 reloadTrigger: reloadTrigger
             )

@@ -4,15 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>EMS Swiat Myjni copy.xcscheme_^#shared#^_</key>
+		<key>EMS Swiat Myjni.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>EMS Swiat Myjni.xcscheme_^#shared#^_</key>
+		<key>Golden Duck.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>TPS - Test AC.xcscheme_^#shared#^_</key>
 		<dict>
@@ -22,12 +22,30 @@
 		<key>TPS Test AC.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>tps-mobile.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A572453D302CA106008B6F57</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5724562302CA277008B6F57</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5E76EAD302B6C1500C0576C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

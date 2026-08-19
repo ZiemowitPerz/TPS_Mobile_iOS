@@ -51,6 +51,9 @@ struct WebView: UIViewRepresentable {
         config.dataDetectorTypes = []
 
         let webView = WKWebView(frame: .zero, configuration: config)
+        #if DEBUG
+        webView.isInspectable = true
+        #endif
         webView.navigationDelegate = context.coordinator
         webView.uiDelegate = context.coordinator
 
@@ -121,11 +124,20 @@ struct WebView: UIViewRepresentable {
         /// subdomeny (np. "app.domena2.pl" przejdzie dla wpisu "domena2.pl"),
         /// ale nie dopasowuje przypadkowo "notdomena2.pl".
         private func isHostAllowed(_ host: String?) -> Bool {
-            guard let host = host?.lowercased() else { return false }
-            return allowedHosts.contains { allowed in
-                let allowed = allowed.lowercased()
-                return host == allowed || host.hasSuffix("." + allowed)
+            guard let host = host?.lowercased() else {
+                return false
             }
+
+            let result = allowedHosts.contains { allowed in
+                let normalizedAllowed = allowed.lowercased()
+                return host == normalizedAllowed || host.hasSuffix("." + normalizedAllowed)
+            }
+
+            #if DEBUG
+            print("isHostAllowed: host=\"\(host)\" allowedHosts=\(allowedHosts) -> \(result ? "dozwolony" : "zablokowany")")
+            #endif
+
+            return result
         }
 
         // Kluczowe miejsce blokady: KAŻDA nawigacja (kliknięcie linku,
@@ -147,6 +159,9 @@ struct WebView: UIViewRepresentable {
             // Dopuszczamy tylko http/https — blokuje np. tel:, mailto:,
             // custom schematy próbujące otworzyć inne aplikacje
             guard requestURL.scheme == "https" || requestURL.scheme == "http" else {
+                #if DEBUG
+                print("decidePolicyFor: zablokowany schemat \"\(requestURL.scheme ?? "nil")\" dla \(requestURL)")
+                #endif
                 decisionHandler(.cancel)
                 return
             }
@@ -173,6 +188,32 @@ struct WebView: UIViewRepresentable {
                 webView.load(navigationAction.request)
             }
             return nil // nigdy nie tworzymy nowego okna
+        }
+
+        // Obsługa zgody na kamerę/mikrofon, gdy strona wywołuje JS-owe
+        // getUserMedia() (np. do wideorozmowy, skanera QR, nagrywania audio).
+        // WAŻNE: to jest zgoda "na poziomie WebView" — czy WKWebView w ogóle
+        // przekaże prośbę dalej do systemu. To NIE zastępuje natywnego alertu
+        // iOS ("Appka X chce mieć dostęp do aparatu") — ten i tak się pokaże
+        // przy pierwszym użyciu, pod warunkiem że w Info.plist są ustawione
+        // NSCameraUsageDescription / NSMicrophoneUsageDescription (patrz README).
+        //
+        // Tutaj automatycznie zatwierdzamy prośbę TYLKO jeśli pochodzi
+        // z dozwolonej domeny — dzięki temu obca/niedozwolona strona (gdyby
+        // się jednak jakoś załadowała) nie może wyciągnąć dostępu do kamery.
+        @available(iOS 15.0, *)
+        func webView(
+            _ webView: WKWebView,
+            requestMediaCapturePermissionFor origin: WKSecurityOrigin,
+            initiatedByFrame frame: WKFrameInfo,
+            type: WKMediaCaptureType,
+            decisionHandler: @escaping (WKPermissionDecision) -> Void
+        ) {
+            let granted = isHostAllowed(origin.host)
+            #if DEBUG
+            print("requestMediaCapturePermissionFor: origin=\(origin.host) type=\(type) → \(granted ? "grant" : "deny")")
+            #endif
+            decisionHandler(granted ? .grant : .deny)
         }
 
         // Błąd zanim strona w ogóle zaczęła się ładować (typowy przypadek

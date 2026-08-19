@@ -39,7 +39,7 @@ enum AppConfiguration {
                 .split(separator: ",")	
                 .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
                 .filter { !$0.isEmpty }
-            hosts.appen		d(contentsOf: additional)
+            hosts.append(contentsOf: additional)
         }
 
         #if DEBUG

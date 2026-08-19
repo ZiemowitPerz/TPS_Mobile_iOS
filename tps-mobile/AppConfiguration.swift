@@ -36,10 +36,10 @@ enum AppConfiguration {
 
         if let raw = Bundle.main.object(forInfoDictionaryKey: "APP_ADDITIONAL_ALLOWED_HOSTS") as? String {
             let additional = raw
-                .split(separator: ",")
+                .split(separator: ",")	
                 .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
                 .filter { !$0.isEmpty }
-            hosts.append(contentsOf: additional)
+            hosts.appen		d(contentsOf: additional)
         }
 
         #if DEBUG

@@ -4,6 +4,8 @@
 <dict>
 	<key>APP_ADDITIONAL_ALLOWED_HOSTS</key>
 	<string>$(APP_ADDITIONAL_ALLOWED_HOSTS)</string>
+	<key>APP_ALLOWED_HOST_PATTERNS</key>
+	<string>$(APP_ALLOWED_HOST_PATTERNS)</string>
 	<key>APP_WEB_URL</key>
 	<string>$(APP_WEB_URL)</string>
 </dict>

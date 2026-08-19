@@ -7,6 +7,7 @@ import WebKit
 struct WebView: UIViewRepresentable {
     let url: URL
     let allowedHosts: [String]
+    let allowedHostPattern: String?
     @Binding var didFail: Bool
     let reloadTrigger: Int // zmiana tej wartości = użytkownik nacisnął "Odśwież"
 
@@ -52,7 +53,9 @@ struct WebView: UIViewRepresentable {
 
         let webView = WKWebView(frame: .zero, configuration: config)
         #if DEBUG
-        webView.isInspectable = true
+        if #available(iOS 16.6, *) {
+            webView.isInspectable = true
+        }
         #endif
         webView.navigationDelegate = context.coordinator
         webView.uiDelegate = context.coordinator
@@ -107,34 +110,71 @@ struct WebView: UIViewRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(didFail: $didFail, allowedHosts: allowedHosts)
+        Coordinator(didFail: $didFail, allowedHosts: allowedHosts, allowedHostPattern: allowedHostPattern)
     }
 
     class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
         var didFail: Binding<Bool>
         var lastReloadTrigger: Int = 0
         let allowedHosts: [String]
+        let compiledPattern: NSRegularExpression?
 
-        init(didFail: Binding<Bool>, allowedHosts: [String]) {
+        init(
+            didFail: Binding<Bool>,
+            allowedHosts: [String],
+            allowedHostPattern: String?
+        ) {
             self.didFail = didFail
             self.allowedHosts = allowedHosts
+
+            if let pattern = allowedHostPattern {
+                self.compiledPattern = try? NSRegularExpression(
+                    pattern: pattern,
+                    options: [.caseInsensitive]
+                )
+            } else {
+                self.compiledPattern = nil
+            }
         }
 
         /// Sprawdza, czy dany host jest na whiteliście — dopasowuje też
         /// subdomeny (np. "app.domena2.pl" przejdzie dla wpisu "domena2.pl"),
         /// ale nie dopasowuje przypadkowo "notdomena2.pl".
+        ///
+        /// UWAGA: `contains(where:)` sprawdza WSZYSTKIE elementy tablicy,
+        /// łącznie z pierwszym — jeśli któryś host mimo to "nigdy nie przechodzi",
+        /// to nie jest to bug w tej pętli, tylko niedopasowanie samego stringa
+        /// (literówka, spacja, wielka/mała litera, niewidoczny znak w Info.plist).
+        /// Log poniżej (tylko w DEBUG) pokazuje dokładnie, co jest porównywane.
         private func isHostAllowed(_ host: String?) -> Bool {
             guard let host = host?.lowercased() else {
                 return false
             }
 
-            let result = allowedHosts.contains { allowed in
+            let matchesPlainHost = allowedHosts.contains { allowed in
                 let normalizedAllowed = allowed.lowercased()
                 return host == normalizedAllowed || host.hasSuffix("." + normalizedAllowed)
             }
 
+            let matchesPattern: Bool
+
+            if let regex = compiledPattern {
+                let range = NSRange(host.startIndex..<host.endIndex, in: host)
+                matchesPattern = regex.firstMatch(
+                    in: host,
+                    options: [],
+                    range: range
+                ) != nil
+            }
+            else
+            {
+                matchesPattern = false
+            }
+            
+            let result = matchesPlainHost || matchesPattern
+
             #if DEBUG
-            print("isHostAllowed: host=\"\(host)\" allowedHosts=\(allowedHosts) -> \(result ? "dozwolony" : "zablokowany")")
+            print("isHostAllowed: host=\"\(host)\" allowedHosts=\(allowedHosts) matchesPlainHost=\(matchesPlainHost) matchesPattern=\(matchesPattern) → \(result ? "dozwolony" : "zablokowany")")
             #endif
 
             return result

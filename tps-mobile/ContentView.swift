@@ -9,6 +9,7 @@ struct ContentView: View {
             WebView(
                 url: AppConfiguration.webURL,
                 allowedHosts: AppConfiguration.allowedHosts,
+                allowedHostPattern: AppConfiguration.allowedHostPattern,
                 didFail: $didFail,
                 reloadTrigger: reloadTrigger
             )

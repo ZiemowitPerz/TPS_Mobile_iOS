@@ -48,4 +48,34 @@ enum AppConfiguration {
 
         return hosts
     }
+    
+    /// Wzorce (regex) dla hostów, których NIE da się opisać zwykłą listą —
+    /// typowo multi-tenant adresy w stylu "{tenantId}-eserwis.com.pl".
+    ///
+    /// WAŻNE O BEZPIECZEŃSTWIE: to NIE jest to samo co subdomena. W DNS tylko
+    /// kropka tworzy hierarchię (app.mojadomena.com.pl JEST subdomeną
+    /// mojadomena.com.pl). Myślnik nic nie znaczy — "cokolwiek-mojadomena.com.pl"
+    /// to zupełnie osobna, samodzielna domena, którą może zarejestrować ktokolwiek
+    /// inny. Dlatego wzorzec MUSI precyzyjnie ograniczać, co może być przed
+    /// myślnikiem (np. tylko cyfry), a nie akceptować dowolny prefiks —
+    /// inaczej whitelist przestaje cokolwiek chronić.
+    ///
+    /// Ustaw w Info.plist pod kluczem `APP_ALLOWED_HOST_PATTERNS` jako Array<String>
+    /// z wyrażeniami regularnymi (bez potrzeby dodawania ^ i $ — są dodawane
+    /// automatycznie, żeby wykluczyć dopasowania częściowe/"gdziekolwiek w środku"), np.:
+    ///   ["^[0-9]+-mojadomena\\.com\\.pl$"]
+    /// dopuści "12345-mojadomena.com.pl", ale NIE dopuści "phishing-mojadomena.com.pl".
+    static var allowedHostPattern: String? {
+        guard let value = Bundle.main.object(forInfoDictionaryKey: "APP_ALLOWED_HOST_PATTERNS") as? String else {
+            return nil
+        }
+
+        let cleaned = value.trimmingCharacters(in: .whitespacesAndNewlines)
+	
+        #if DEBUG
+        print("AppConfiguration.allowedHostPattern = \(cleaned)")
+        #endif
+
+        return cleaned.isEmpty ? nil : cleaned
+    }
 }

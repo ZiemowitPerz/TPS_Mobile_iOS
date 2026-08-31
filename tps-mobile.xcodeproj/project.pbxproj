@@ -7,16 +7,27 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		A5224EF23035E96700A839E0 /* eSerwis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eSerwis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5724569302CA277008B6F57 /* Golden Duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Golden Duck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E76E54302A033E00C0576C /* EMS Świat Myjni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EMS Świat Myjni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E76EB4302B6C1500C0576C /* TPS Test AC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TPS Test AC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A5224EF43035E96800A839E0 /* Exceptions for "tps-mobile" folder in "eSerwis" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Info-EMS.plist",
+				"Info-GoldenDuck.plist",
+				"Info-TestAC.plist",
+			);
+			target = A5224EEB3035E96700A839E0 /* eSerwis */;
+		};
 		A572456B302CA278008B6F57 /* Exceptions for "tps-mobile" folder in "Golden Duck" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Info-EMS.plist",
+				"Info-eSerwis.plist",
 				"Info-TestAC.plist",
 			);
 			target = A5724562302CA277008B6F57 /* Golden Duck */;
@@ -25,6 +36,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Info-EMS.plist",
+				"Info-eSerwis.plist",
 				"Info-GoldenDuck.plist",
 			);
 			target = A5E76EAD302B6C1500C0576C /* TPS Test AC */;
@@ -32,6 +44,7 @@
 		A5E76ED0302B71B400C0576C /* Exceptions for "tps-mobile" folder in "EMS Swiat Myjni" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Info-eSerwis.plist",
 				"Info-GoldenDuck.plist",
 				"Info-TestAC.plist",
 			);
@@ -46,6 +59,7 @@
 				A5E76ED0302B71B400C0576C /* Exceptions for "tps-mobile" folder in "EMS Swiat Myjni" target */,
 				A5E76EB6302B6C1600C0576C /* Exceptions for "tps-mobile" folder in "TPS Test AC" target */,
 				A572456B302CA278008B6F57 /* Exceptions for "tps-mobile" folder in "Golden Duck" target */,
+				A5224EF43035E96800A839E0 /* Exceptions for "tps-mobile" folder in "eSerwis" target */,
 			);
 			path = "tps-mobile";
 			sourceTree = "<group>";
@@ -53,6 +67,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A5224EED3035E96700A839E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5724564302CA277008B6F57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +112,7 @@
 				A5E76E54302A033E00C0576C /* EMS Świat Myjni.app */,
 				A5E76EB4302B6C1500C0576C /* TPS Test AC.app */,
 				A5724569302CA277008B6F57 /* Golden Duck.app */,
+				A5224EF23035E96700A839E0 /* eSerwis.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +120,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A5224EEB3035E96700A839E0 /* eSerwis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5224EEF3035E96700A839E0 /* Build configuration list for PBXNativeTarget "eSerwis" */;
+			buildPhases = (
+				A5224EEC3035E96700A839E0 /* Sources */,
+				A5224EED3035E96700A839E0 /* Frameworks */,
+				A5224EEE3035E96700A839E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A5E76E56302A033E00C0576C /* tps-mobile */,
+			);
+			name = eSerwis;
+			packageProductDependencies = (
+			);
+			productName = "tps-mobile";
+			productReference = A5224EF23035E96700A839E0 /* eSerwis.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A5724562302CA277008B6F57 /* Golden Duck */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5724566302CA277008B6F57 /* Build configuration list for PBXNativeTarget "Golden Duck" */;
@@ -196,11 +240,19 @@
 				A5E76E53302A033E00C0576C /* EMS Swiat Myjni */,
 				A5E76EAD302B6C1500C0576C /* TPS Test AC */,
 				A5724562302CA277008B6F57 /* Golden Duck */,
+				A5224EEB3035E96700A839E0 /* eSerwis */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A5224EEE3035E96700A839E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5724565302CA277008B6F57 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +277,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A5224EEC3035E96700A839E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5724563302CA277008B6F57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,10 +308,101 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		A5224EF03035E96700A839E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_ADDITIONAL_ALLOWED_HOSTS = "prebeta.e-serwis.com.pl";
+				APP_ALLOWED_HOST_PATTERNS = "^([0-9]+-)?prebeta\\.e-serwis\\.com\\.pl$\n";
+				APP_BUNDLE_ID = com.companyname.eserwis;
+				APP_ICON_SET_NAME = "AppIcon-eSerwis";
+				APP_NAME = eSerwis;
+				APP_WEB_URL = "https://prebeta.e-serwis.com.pl/login";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 832AW96PY5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "tps-mobile/Info-eSerwis.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = eSerwis;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Aplikacja potrzebuje dostępu do aparatu, aby ...";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Aplikacja potrzebuje dostępu do mikrofonu, aby umożliwić nagrywanie notatkek głosowych";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A5224EF13035E96700A839E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_ADDITIONAL_ALLOWED_HOSTS = "prebeta.e-serwis.com.pl";
+				APP_ALLOWED_HOST_PATTERNS = "^([0-9]+-)?prebeta\\.e-serwis\\.com\\.pl$\n";
+				APP_BUNDLE_ID = com.companyname.eserwis;
+				APP_ICON_SET_NAME = "AppIcon-eSerwis";
+				APP_NAME = eSerwis;
+				APP_WEB_URL = "https://prebeta.e-serwis.com.pl/login";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 832AW96PY5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "tps-mobile/Info-eSerwis.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = eSerwis;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Aplikacja potrzebuje dostępu do aparatu, aby ...";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Aplikacja potrzebuje dostępu do mikrofonu, aby umożliwić nagrywanie notatkek głosowych";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		A5724567302CA277008B6F57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_ADDITIONAL_ALLOWED_HOSTS = "ibs.integra.com.pl,tps.integra.com.pl";
+				APP_ALLOWED_HOST_PATTERNS = "";
 				APP_BUNDLE_ID = com.companyname.goldenduck;
 				APP_ICON_SET_NAME = "AppIcon-GoldenDuck";
 				APP_NAME = "Golden Duck";
@@ -287,7 +437,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -295,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_ADDITIONAL_ALLOWED_HOSTS = "ibs.integra.com.pl,tps.integra.com.pl";
+				APP_ALLOWED_HOST_PATTERNS = "";
 				APP_BUNDLE_ID = com.companyname.goldenduck;
 				APP_ICON_SET_NAME = "AppIcon-GoldenDuck";
 				APP_NAME = "Golden Duck";
@@ -329,7 +480,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -458,6 +609,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_ADDITIONAL_ALLOWED_HOSTS = ibs.integra.com.pl;
+				APP_ALLOWED_HOST_PATTERNS = "";
 				APP_BUNDLE_ID = com.companyname.EMSSwiatMyjni;
 				APP_ICON_SET_NAME = "AppIcon-EMS";
 				APP_NAME = "EMS Świat Myjni";
@@ -470,6 +622,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "tps-mobile/Info-EMS.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "EMS Świat Myjni";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -491,7 +644,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -499,6 +652,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_ADDITIONAL_ALLOWED_HOSTS = ibs.integra.com.pl;
+				APP_ALLOWED_HOST_PATTERNS = "";
 				APP_BUNDLE_ID = com.companyname.EMSSwiatMyjni;
 				APP_ICON_SET_NAME = "AppIcon-EMS";
 				APP_NAME = "EMS Świat Myjni";
@@ -511,6 +665,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "tps-mobile/Info-EMS.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "EMS Świat Myjni";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -532,7 +687,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -540,6 +695,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_ADDITIONAL_ALLOWED_HOSTS = "ibs.integra.com.pl, tps.integra.com.pl";
+				APP_ALLOWED_HOST_PATTERNS = "";
 				APP_BUNDLE_ID = com.companyname.integratps;
 				APP_ICON_SET_NAME = "AppIcon-TestAC";
 				APP_NAME = "TPS Test AC";
@@ -552,6 +708,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "tps-mobile/Info-TestAC.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TPS Test AC";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -573,7 +730,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -581,6 +738,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_ADDITIONAL_ALLOWED_HOSTS = "ibs.integra.com.pl, tps.integra.com.pl";
+				APP_ALLOWED_HOST_PATTERNS = "";
 				APP_BUNDLE_ID = com.companyname.integratps;
 				APP_ICON_SET_NAME = "AppIcon-TestAC";
 				APP_NAME = "TPS Test AC";
@@ -593,6 +751,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "tps-mobile/Info-TestAC.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TPS Test AC";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -614,13 +773,22 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A5224EEF3035E96700A839E0 /* Build configuration list for PBXNativeTarget "eSerwis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5224EF03035E96700A839E0 /* Debug */,
+				A5224EF13035E96700A839E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A5724566302CA277008B6F57 /* Build configuration list for PBXNativeTarget "Golden Duck" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

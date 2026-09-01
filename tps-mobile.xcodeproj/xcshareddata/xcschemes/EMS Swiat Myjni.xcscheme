@@ -25,7 +25,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A503F7593046F7EA0068088E"
-               BuildableName = "EMS S&#x301;wiat Myjni.app"
+               BuildableName = "EMS Swiat Myjni.app"
                BlueprintName = "EMS Swiat Myjni"
                ReferencedContainer = "container:tps-mobile.xcodeproj">
             </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A503F7593046F7EA0068088E"
-            BuildableName = "EMS S&#x301;wiat Myjni.app"
+            BuildableName = "EMS Swiat Myjni.app"
             BlueprintName = "EMS Swiat Myjni"
             ReferencedContainer = "container:tps-mobile.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A503F7593046F7EA0068088E"
-            BuildableName = "EMS S&#x301;wiat Myjni.app"
+            BuildableName = "EMS Swiat Myjni.app"
             BlueprintName = "EMS Swiat Myjni"
             ReferencedContainer = "container:tps-mobile.xcodeproj">
          </BuildableReference>

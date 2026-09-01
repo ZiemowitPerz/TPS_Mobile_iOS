@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A503F7603046F7EA0068088E /* EMS Świat Myjni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EMS Świat Myjni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A503F7603046F7EA0068088E /* EMS Swiat Myjni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EMS Swiat Myjni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5224EF23035E96700A839E0 /* eSerwis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eSerwis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5724569302CA277008B6F57 /* Golden Duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Golden Duck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E76EB4302B6C1500C0576C /* TPS Test AC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TPS Test AC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +112,7 @@
 				A5E76EB4302B6C1500C0576C /* TPS Test AC.app */,
 				A5724569302CA277008B6F57 /* Golden Duck.app */,
 				A5224EF23035E96700A839E0 /* eSerwis.app */,
-				A503F7603046F7EA0068088E /* EMS Świat Myjni.app */,
+				A503F7603046F7EA0068088E /* EMS Swiat Myjni.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 			packageProductDependencies = (
 			);
 			productName = "tps-mobile";
-			productReference = A503F7603046F7EA0068088E /* EMS Świat Myjni.app */;
+			productReference = A503F7603046F7EA0068088E /* EMS Swiat Myjni.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A5224EEB3035E96700A839E0 /* eSerwis */ = {
@@ -310,7 +310,7 @@
 				APP_ALLOWED_HOST_PATTERNS = "";
 				APP_BUNDLE_ID = com.companyname.EMSSwiatMyjni;
 				APP_ICON_SET_NAME = "AppIcon-EMS";
-				APP_NAME = "EMS Świat Myjni";
+				APP_NAME = "EMS Swiat Myjni";
 				APP_WEB_URL = "https://myjnia.koszalin.pl/ems/\n";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,7 +320,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "tps-mobile/Info-EMS.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "EMS Świat Myjni";
+				INFOPLIST_KEY_CFBundleDisplayName = "EMS Swiat Myjni";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -353,7 +353,7 @@
 				APP_ALLOWED_HOST_PATTERNS = "";
 				APP_BUNDLE_ID = com.companyname.EMSSwiatMyjni;
 				APP_ICON_SET_NAME = "AppIcon-EMS";
-				APP_NAME = "EMS Świat Myjni";
+				APP_NAME = "EMS Swiat Myjni";
 				APP_WEB_URL = "https://myjnia.koszalin.pl/ems/\n";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -363,7 +363,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "tps-mobile/Info-EMS.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "EMS Świat Myjni";
+				INFOPLIST_KEY_CFBundleDisplayName = "EMS Swiat Myjni";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

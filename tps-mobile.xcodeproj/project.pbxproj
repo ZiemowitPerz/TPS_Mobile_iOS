@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		A503F7603046F7EA0068088E /* EMS Świat Myjni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EMS Świat Myjni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5224EF23035E96700A839E0 /* eSerwis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eSerwis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5724569302CA277008B6F57 /* Golden Duck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Golden Duck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5E76E54302A033E00C0576C /* EMS Świat Myjni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EMS Świat Myjni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E76EB4302B6C1500C0576C /* TPS Test AC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TPS Test AC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A503F7623046F7EB0068088E /* Exceptions for "tps-mobile" folder in "EMS Swiat Myjni" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Info-eSerwis.plist",
+				"Info-GoldenDuck.plist",
+				"Info-TestAC.plist",
+			);
+			target = A503F7593046F7EA0068088E /* EMS Swiat Myjni */;
+		};
 		A5224EF43035E96800A839E0 /* Exceptions for "tps-mobile" folder in "eSerwis" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Info-EMS.plist",
-				"Info-eSerwis.plist",
 				"Info-GoldenDuck.plist",
 				"Info-TestAC.plist",
 			);
@@ -29,7 +37,6 @@
 			membershipExceptions = (
 				"Info-EMS.plist",
 				"Info-eSerwis.plist",
-				"Info-GoldenDuck.plist",
 				"Info-TestAC.plist",
 			);
 			target = A5724562302CA277008B6F57 /* Golden Duck */;
@@ -40,19 +47,8 @@
 				"Info-EMS.plist",
 				"Info-eSerwis.plist",
 				"Info-GoldenDuck.plist",
-				"Info-TestAC.plist",
 			);
 			target = A5E76EAD302B6C1500C0576C /* TPS Test AC */;
-		};
-		A5E76ED0302B71B400C0576C /* Exceptions for "tps-mobile" folder in "EMS Swiat Myjni" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Info-EMS.plist",
-				"Info-eSerwis.plist",
-				"Info-GoldenDuck.plist",
-				"Info-TestAC.plist",
-			);
-			target = A5E76E53302A033E00C0576C /* EMS Swiat Myjni */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -60,10 +56,10 @@
 		A5E76E56302A033E00C0576C /* tps-mobile */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				A5E76ED0302B71B400C0576C /* Exceptions for "tps-mobile" folder in "EMS Swiat Myjni" target */,
 				A5E76EB6302B6C1600C0576C /* Exceptions for "tps-mobile" folder in "TPS Test AC" target */,
 				A572456B302CA278008B6F57 /* Exceptions for "tps-mobile" folder in "Golden Duck" target */,
 				A5224EF43035E96800A839E0 /* Exceptions for "tps-mobile" folder in "eSerwis" target */,
+				A503F7623046F7EB0068088E /* Exceptions for "tps-mobile" folder in "EMS Swiat Myjni" target */,
 			);
 			path = "tps-mobile";
 			sourceTree = "<group>";
@@ -71,6 +67,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A503F75B3046F7EA0068088E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5224EED3035E96700A839E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,13 +82,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A5724564302CA277008B6F57 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5E76E51302A033E00C0576C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -113,10 +109,10 @@
 		A5E76E55302A033E00C0576C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5E76E54302A033E00C0576C /* EMS Świat Myjni.app */,
 				A5E76EB4302B6C1500C0576C /* TPS Test AC.app */,
 				A5724569302CA277008B6F57 /* Golden Duck.app */,
 				A5224EF23035E96700A839E0 /* eSerwis.app */,
+				A503F7603046F7EA0068088E /* EMS Świat Myjni.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +120,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A503F7593046F7EA0068088E /* EMS Swiat Myjni */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A503F75D3046F7EA0068088E /* Build configuration list for PBXNativeTarget "EMS Swiat Myjni" */;
+			buildPhases = (
+				A503F75A3046F7EA0068088E /* Sources */,
+				A503F75B3046F7EA0068088E /* Frameworks */,
+				A503F75C3046F7EA0068088E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A5E76E56302A033E00C0576C /* tps-mobile */,
+			);
+			name = "EMS Swiat Myjni";
+			packageProductDependencies = (
+			);
+			productName = "tps-mobile";
+			productReference = A503F7603046F7EA0068088E /* EMS Świat Myjni.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A5224EEB3035E96700A839E0 /* eSerwis */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5224EEF3035E96700A839E0 /* Build configuration list for PBXNativeTarget "eSerwis" */;
@@ -168,28 +186,6 @@
 			productReference = A5724569302CA277008B6F57 /* Golden Duck.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A5E76E53302A033E00C0576C /* EMS Swiat Myjni */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A5E76E5F302A034100C0576C /* Build configuration list for PBXNativeTarget "EMS Swiat Myjni" */;
-			buildPhases = (
-				A5E76E50302A033E00C0576C /* Sources */,
-				A5E76E51302A033E00C0576C /* Frameworks */,
-				A5E76E52302A033E00C0576C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				A5E76E56302A033E00C0576C /* tps-mobile */,
-			);
-			name = "EMS Swiat Myjni";
-			packageProductDependencies = (
-			);
-			productName = "tps-mobile";
-			productReference = A5E76E54302A033E00C0576C /* EMS Świat Myjni.app */;
-			productType = "com.apple.product-type.application";
-		};
 		A5E76EAD302B6C1500C0576C /* TPS Test AC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5E76EB1302B6C1500C0576C /* Build configuration list for PBXNativeTarget "TPS Test AC" */;
@@ -221,11 +217,6 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2660;
 				LastUpgradeCheck = 2660;
-				TargetAttributes = {
-					A5E76E53302A033E00C0576C = {
-						CreatedOnToolsVersion = 26.6;
-					};
-				};
 			};
 			buildConfigurationList = A5E76E4F302A033E00C0576C /* Build configuration list for PBXProject "tps-mobile" */;
 			developmentRegion = en;
@@ -241,15 +232,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5E76E53302A033E00C0576C /* EMS Swiat Myjni */,
 				A5E76EAD302B6C1500C0576C /* TPS Test AC */,
 				A5724562302CA277008B6F57 /* Golden Duck */,
 				A5224EEB3035E96700A839E0 /* eSerwis */,
+				A503F7593046F7EA0068088E /* EMS Swiat Myjni */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A503F75C3046F7EA0068088E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5224EEE3035E96700A839E0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,13 +256,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A5724565302CA277008B6F57 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5E76E52302A033E00C0576C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,6 +272,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A503F75A3046F7EA0068088E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5224EEC3035E96700A839E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -289,13 +287,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A5724563302CA277008B6F57 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5E76E50302A033E00C0576C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -312,6 +303,92 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		A503F75E3046F7EA0068088E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_ADDITIONAL_ALLOWED_HOSTS = "ibs.integra.com.pl,tps.integra.com.pl";
+				APP_ALLOWED_HOST_PATTERNS = "";
+				APP_BUNDLE_ID = com.companyname.EMSSwiatMyjni;
+				APP_ICON_SET_NAME = "AppIcon-EMS";
+				APP_NAME = "EMS Świat Myjni";
+				APP_WEB_URL = "https://myjnia.koszalin.pl/ems/\n";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 832AW96PY5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "tps-mobile/Info-EMS.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "EMS Świat Myjni";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_NAME = "$(APP_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A503F75F3046F7EA0068088E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_ADDITIONAL_ALLOWED_HOSTS = "ibs.integra.com.pl,tps.integra.com.pl";
+				APP_ALLOWED_HOST_PATTERNS = "";
+				APP_BUNDLE_ID = com.companyname.EMSSwiatMyjni;
+				APP_ICON_SET_NAME = "AppIcon-EMS";
+				APP_NAME = "EMS Świat Myjni";
+				APP_WEB_URL = "https://myjnia.koszalin.pl/ems/\n";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 832AW96PY5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "tps-mobile/Info-EMS.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "EMS Świat Myjni";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_NAME = "$(APP_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		A5224EF03035E96700A839E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -609,96 +686,6 @@
 			};
 			name = Release;
 		};
-		A5E76E60302A034100C0576C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APP_ADDITIONAL_ALLOWED_HOSTS = ibs.integra.com.pl;
-				APP_ALLOWED_HOST_PATTERNS = "";
-				APP_BUNDLE_ID = com.companyname.EMSSwiatMyjni;
-				APP_ICON_SET_NAME = "AppIcon-EMS";
-				APP_NAME = "EMS Świat Myjni";
-				APP_WEB_URL = "https://myjnia.koszalin.pl/ems/";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = 832AW96PY5;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "tps-mobile/Info-EMS.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "EMS Świat Myjni";
-				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.5.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(APP_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		A5E76E61302A034100C0576C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APP_ADDITIONAL_ALLOWED_HOSTS = ibs.integra.com.pl;
-				APP_ALLOWED_HOST_PATTERNS = "";
-				APP_BUNDLE_ID = com.companyname.EMSSwiatMyjni;
-				APP_ICON_SET_NAME = "AppIcon-EMS";
-				APP_NAME = "EMS Świat Myjni";
-				APP_WEB_URL = "https://myjnia.koszalin.pl/ems/";
-				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = 832AW96PY5;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "tps-mobile/Info-EMS.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "EMS Świat Myjni";
-				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.5.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.companyname.EMSSwiatMyjni;
-				PRODUCT_NAME = "$(APP_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		A5E76EB2302B6C1500C0576C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -788,6 +775,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A503F75D3046F7EA0068088E /* Build configuration list for PBXNativeTarget "EMS Swiat Myjni" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A503F75E3046F7EA0068088E /* Debug */,
+				A503F75F3046F7EA0068088E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A5224EEF3035E96700A839E0 /* Build configuration list for PBXNativeTarget "eSerwis" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -811,15 +807,6 @@
 			buildConfigurations = (
 				A5E76E5D302A034100C0576C /* Debug */,
 				A5E76E5E302A034100C0576C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A5E76E5F302A034100C0576C /* Build configuration list for PBXNativeTarget "EMS Swiat Myjni" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A5E76E60302A034100C0576C /* Debug */,
-				A5E76E61302A034100C0576C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

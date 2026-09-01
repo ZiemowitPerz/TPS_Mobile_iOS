@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "2660"
-   version = "1.7">
+   version = "2.2">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
       buildArchitectures = "Automatic">
       <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <AutocreatedTestPlanReference>
+            </AutocreatedTestPlanReference>
+         </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
@@ -15,7 +24,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A5E76E53302A033E00C0576C"
+               BlueprintIdentifier = "A503F7593046F7EA0068088E"
                BuildableName = "EMS S&#x301;wiat Myjni.app"
                BlueprintName = "EMS Swiat Myjni"
                ReferencedContainer = "container:tps-mobile.xcodeproj">
@@ -45,7 +54,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A5E76E53302A033E00C0576C"
+            BlueprintIdentifier = "A503F7593046F7EA0068088E"
             BuildableName = "EMS S&#x301;wiat Myjni.app"
             BlueprintName = "EMS Swiat Myjni"
             ReferencedContainer = "container:tps-mobile.xcodeproj">
@@ -62,7 +71,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A5E76E53302A033E00C0576C"
+            BlueprintIdentifier = "A503F7593046F7EA0068088E"
             BuildableName = "EMS S&#x301;wiat Myjni.app"
             BlueprintName = "EMS Swiat Myjni"
             ReferencedContainer = "container:tps-mobile.xcodeproj">
